@@ -2,14 +2,14 @@
 
 ### Como testar
 
-1. Todos os EndPoints encontram-se disponÌvel no /swagger 
-2. Para acessar os EndPoints da API È necess·rio realizar o Login
+1. Todos os EndPoints encontram-se dispon√≠vel no `/swagger` 
+2. Para acessar os EndPoints da API √© necess√°rio realizar o Login - √â validado o e-mail da Tabela Users
 
-3. ApÛs realizar a autenticaÁ„o, copiar o Token gerado pela API
+3. Ap√≥s realizar a autentica√ß√£o, copiar o Token gerado pela API
 
-4. Realizar a autorizaÁ„o utilizando o Token gerado no passo anterior
+4. Realizar a autoriza√ß√£o utilizando o Token gerado no passo anterior - Exemplo: Bearer TOKEN
 
-5. Agora, todos os endpoints estar„o disponÌveis para acesso! :)
+5. Agora, todos os endpoints estar√£o dispon√≠veis para acesso! :)
 
-5. O Script do banco de dados encontra-se disponÌvel no repositÛrio
+5. O Script do banco de dados encontra-se dispon√≠vel no reposit√≥rio
 

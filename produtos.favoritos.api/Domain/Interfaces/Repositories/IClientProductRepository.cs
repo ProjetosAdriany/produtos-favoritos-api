@@ -11,6 +11,6 @@ namespace Domain.Interfaces.Repositories
     {
         Task<ProductEntity> InsertAsync(ProductEntity product, Guid idClient);
         Task<List<ProductEntity>> SelectAsync(Guid idClient);
-        Task<bool> DeleteAsync(Guid id);
+        Task<bool> DeleteAsync(Guid idClient);
     }
 }

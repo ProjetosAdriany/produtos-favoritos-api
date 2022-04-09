@@ -13,6 +13,5 @@ namespace Domain.DTOs.Client
         public string Name { get; set; }
         public string Email { get; set; }
         public DateTime CreateAt { get; set; }
-        public List<ProductCreateDTO> Products { get; set; }
     }
 }

@@ -2,8 +2,9 @@
 using Data.Repository;
 using Domain.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-
+using Provider;
 
 namespace CrossCutting.DependencyInjection
 {
@@ -15,6 +16,7 @@ namespace CrossCutting.DependencyInjection
             serviceCollection.AddScoped<IClientRepository, ClientRepository>();
             serviceCollection.AddScoped<IClientProductRepository, ClientProductRepository>();
             serviceCollection.AddScoped<IUserRepository, UserRepository>();
+            serviceCollection.AddTransient<IMagaluProvider, MagaluProvider>();
             serviceCollection.AddDbContext<MyContext>(
                 options => options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr))
             );

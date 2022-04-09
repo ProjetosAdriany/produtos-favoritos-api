@@ -55,13 +55,19 @@ namespace Application.Controllers
 
             try
             {
-                return Ok(await _service.Get(id));
+                var result = await _service.Get(id);
+                if (result == null)
+                    return NotFound();
+                
+                return Ok(result);
             }
             catch (System.ArgumentException e)
             {
 
                 return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
             }
+
+            
         }
 
         [HttpPost]
@@ -99,7 +105,7 @@ namespace Application.Controllers
             {
                 var result = await _service.Put(client);
                 if (result == null)
-                    return BadRequest();
+                    return NotFound();
 
                 return Ok(result);
 

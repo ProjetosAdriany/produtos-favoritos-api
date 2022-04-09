@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.DTOs.Product;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -21,6 +22,6 @@ namespace Domain.DTOs.Client
         [StringLength(100, ErrorMessage = "Tamanho máximo de {1} caracteres")]
         public string Email { get; set; }
 
-        public IEnumerable<Guid> Products { get; set; }
+        public List<ProductCreateDTO> Products { get; set; }
     }
 }

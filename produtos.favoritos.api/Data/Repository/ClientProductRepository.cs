@@ -26,23 +26,17 @@ namespace Data.Repository
                 try
                 {
                     List<ClientProductEntity> listClientProductEntity = await _dataset.Where(p => p.IdClient.Equals(idClient)).ToListAsync();
+                    
                     List<ProductEntity> ListProductEntity = new();
-                    ProductEntity productEntity = new()
+                    foreach(ClientProductEntity item in listClientProductEntity)
                     {
-                        Id = Guid.NewGuid(),
-                        Image = "imagem",
-                        Price = 10,
-                        Title = "Produto A"
-                    };
-                    ProductEntity productEntity2 = new()
-                    {
-                        Id = Guid.NewGuid(),
-                        Image = "imagem",
-                        Price = 20,
-                        Title = "Produto B"
-                    };
-                    ListProductEntity.Add(productEntity);
-                    ListProductEntity.Add(productEntity2);
+                        ProductEntity productEntity = new()
+                        {
+                            Id = item.IdProduct
+                        };                        
+                        ListProductEntity.Add(productEntity);
+                    }
+
                     return ListProductEntity;
                 }
                 catch (Exception ex)
@@ -82,11 +76,11 @@ namespace Data.Repository
                 return product;
             }
 
-            public async Task<bool> DeleteAsync(Guid id)
+            public async Task<bool> DeleteAsync(Guid idClient)
             {
                 try
                 {
-                    List<ClientProductEntity> result = await _dataset.Where(p => p.IdClient.Equals(id)).ToListAsync();
+                    List<ClientProductEntity> result = await _dataset.Where(p => p.IdClient.Equals(idClient)).ToListAsync();
                     if (result == null)
                         return false;
 

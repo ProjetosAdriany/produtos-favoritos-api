@@ -35,7 +35,7 @@ namespace Data.Repository
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new Exception(ex.Message, ex.InnerException);
             }
         }
 
@@ -47,7 +47,7 @@ namespace Data.Repository
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new Exception(ex.Message, ex.InnerException);
             }
         }
 
@@ -67,8 +67,7 @@ namespace Data.Repository
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                throw new Exception(ex.Message, ex.InnerException);
             }
 
             return client;
@@ -92,8 +91,7 @@ namespace Data.Repository
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                throw new Exception(ex.Message, ex.InnerException);
             }
 
             return client;
@@ -113,8 +111,7 @@ namespace Data.Repository
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                throw new Exception(ex.Message, ex.InnerException);
             }
 
         }

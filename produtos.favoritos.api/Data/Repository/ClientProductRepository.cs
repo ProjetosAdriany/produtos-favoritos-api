@@ -41,7 +41,7 @@ namespace Data.Repository
                 }
                 catch (Exception ex)
                 {
-                    throw ex;
+                    throw new Exception(ex.Message, ex.InnerException);
                 }
             }
 
@@ -69,11 +69,10 @@ namespace Data.Repository
                 }
                 catch (Exception ex)
                 {
-
-                    throw ex;
+                    throw new Exception(ex.Message, ex.InnerException);
                 }
 
-                return product;
+            return product;
             }
 
             public async Task<bool> DeleteAsync(Guid idClient)
@@ -93,10 +92,9 @@ namespace Data.Repository
                 }
                 catch (Exception ex)
                 {
-
-                    throw ex;
+                    throw new Exception(ex.Message, ex.InnerException);
                 }
 
-            }
+        }
         }
 }

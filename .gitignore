@@ -266,3 +266,4 @@ __pycache__/
 Logs/
 out/
 /balcao.web/Properties/PublishProfiles/*
+/produtos.favoritos.api/.vs/produtos.favoritos.api/v16/TestStore/0

@@ -4,15 +4,16 @@ using Domain.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using Provider;
 
 namespace CrossCutting.DependencyInjection
 {
     public class ConfigureRepository
     {
-        public static void ConfigureDependenciesRepository(IServiceCollection serviceCollection)
+        public static void ConfigureDependenciesRepository(IServiceCollection serviceCollection, IConfiguration configuration)
         {
-            string mySqlConnectionStr = "server = localhost; port = 3306; database = csharpBasico; user = root; password = 123456; Persist Security Info = False; Connect Timeout = 300";
+            string mySqlConnectionStr = configuration.GetSection("ConnectionStrings")["DefaultConnection"];
             serviceCollection.AddScoped<IClientRepository, ClientRepository>();
             serviceCollection.AddScoped<IClientProductRepository, ClientProductRepository>();
             serviceCollection.AddScoped<IUserRepository, UserRepository>();

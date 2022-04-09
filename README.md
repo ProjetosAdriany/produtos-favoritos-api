@@ -1,6 +1,6 @@
 # Produtos Favoritos do Cliente
 
-### Como testar
+### Como testar! :)
 
 1. Todos os EndPoints encontram-se disponível no `/swagger` 
 2. Para acessar os EndPoints da API é necessário realizar o Login - É validado o e-mail da Tabela Users

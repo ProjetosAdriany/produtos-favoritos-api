@@ -1,0 +1,33 @@
+CREATE TABLE `client` (
+  `Id` varchar(100) NOT NULL,
+  `CreateAt` datetime DEFAULT NULL,
+  `UpdateAt` datetime DEFAULT NULL,
+  `Email` varchar(100) NOT NULL,
+  `Name` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `Client_Id_IDX` (`Id`) USING BTREE,
+  UNIQUE KEY `client_Email_IDX` (`Email`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `user` (
+  `Id` char(36) NOT NULL,
+  `CreateAt` datetime(6) DEFAULT NULL,
+  `UpdateAt` datetime(6) DEFAULT NULL,
+  `Name` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `Email` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `IX_User_Email` (`Email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `clientproduct` (
+  `idClient` varchar(100) NOT NULL,
+  `idProduct` varchar(100) NOT NULL,
+  `id` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `clientproduct_FK` (`idClient`),
+  CONSTRAINT `clientproduct_FK` FOREIGN KEY (`idClient`) REFERENCES `client` (`Id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+

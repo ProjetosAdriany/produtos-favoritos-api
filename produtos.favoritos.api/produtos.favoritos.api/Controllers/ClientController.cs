@@ -24,7 +24,7 @@ namespace Application.Controllers
             _service = service;
         }
 
-        //[Authorize("Bearer")]
+        [Authorize("Bearer")]
         [HttpGet]
         public async Task<ActionResult> GetAll()
         {
@@ -43,7 +43,7 @@ namespace Application.Controllers
             }
         }
 
-        //[Authorize("Bearer")]
+        [Authorize("Bearer")]
         [HttpGet]
         [Route("{id}", Name = "GetWithId")]
         public async Task<ActionResult> Get(Guid id)
@@ -70,6 +70,7 @@ namespace Application.Controllers
             
         }
 
+        [Authorize("Bearer")]
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] ClientCreateDTO client)
         {
@@ -93,6 +94,7 @@ namespace Application.Controllers
             }
         }
 
+        [Authorize("Bearer")]
         [HttpPut]
         public async Task<ActionResult> Put([FromBody] ClientUpdateDTO client)
         {
@@ -117,6 +119,7 @@ namespace Application.Controllers
             }
         }
 
+        [Authorize("Bearer")]
         [HttpDelete]
         public async Task<ActionResult> Delete(Guid id)
         {

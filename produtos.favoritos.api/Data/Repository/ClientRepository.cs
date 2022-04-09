@@ -39,7 +39,7 @@ namespace Data.Repository
             }
         }
 
-        public async Task<IEnumerable<ClientEntity>> AllSelectAsync()
+        public async Task<List<ClientEntity>> AllSelectAsync()
         {
             try
             {

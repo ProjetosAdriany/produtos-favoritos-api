@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Domain.DTOs.Client;
+using Domain.DTOs.Product;
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace CrossCutting.Mapping
             CreateMap<ClientDTO, ClientEntity>().ReverseMap();
             CreateMap<ClientCreateResultDTO, ClientEntity>().ReverseMap();
             CreateMap<ClientUpdateResultDTO, ClientEntity>().ReverseMap();
+            CreateMap<ProductDTO, ProductEntity>().ReverseMap();
         }
     }
 }

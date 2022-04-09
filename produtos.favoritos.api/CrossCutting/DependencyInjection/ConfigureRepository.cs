@@ -13,6 +13,7 @@ namespace CrossCutting.DependencyInjection
         {
             string mySqlConnectionStr = "server = localhost; port = 3306; database = csharpBasico; user = root; password = 123456; Persist Security Info = False; Connect Timeout = 300";
             serviceCollection.AddScoped<IClientRepository, ClientRepository>();
+            serviceCollection.AddScoped<IClientProductRepository, ClientProductRepository>();
             serviceCollection.AddScoped<IUserRepository, UserRepository>();
             serviceCollection.AddDbContext<MyContext>(
                 options => options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr))

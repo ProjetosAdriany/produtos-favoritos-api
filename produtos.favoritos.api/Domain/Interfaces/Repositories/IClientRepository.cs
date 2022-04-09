@@ -13,7 +13,7 @@ namespace Domain.Interfaces.Repositories
         Task<ClientEntity> UpdateAsync(ClientEntity client);
         Task<bool> DeleteAsync(Guid id);
         Task<ClientEntity> SelectAsync(Guid id);
-        Task<IEnumerable<ClientEntity>> AllSelectAsync();
+        Task<List<ClientEntity>> AllSelectAsync();
         Task<bool> ExistAsync(string email);
     }
 }

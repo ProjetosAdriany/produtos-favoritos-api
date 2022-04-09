@@ -24,7 +24,7 @@ namespace Application.Controllers
             _service = service;
         }
 
-        [Authorize("Bearer")]
+        //[Authorize("Bearer")]
         [HttpGet]
         public async Task<ActionResult> GetAll()
         {
@@ -43,7 +43,7 @@ namespace Application.Controllers
             }
         }
 
-        [Authorize("Bearer")]
+        //[Authorize("Bearer")]
         [HttpGet]
         [Route("{id}", Name = "GetWithId")]
         public async Task<ActionResult> Get(Guid id)
@@ -112,7 +112,7 @@ namespace Application.Controllers
         }
 
         [HttpDelete]
-        public async Task<ActionResult> Delete(ClientEntity client)
+        public async Task<ActionResult> Delete(Guid id)
         {
             if (!ModelState.IsValid)
             {
@@ -121,7 +121,7 @@ namespace Application.Controllers
 
             try
             {
-                return Ok(await _service.Delete(client.Id));
+                return Ok(await _service.Delete(id));
             }
             catch (System.ArgumentException e)
             {

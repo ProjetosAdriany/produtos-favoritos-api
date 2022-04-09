@@ -20,5 +20,7 @@ namespace Domain.DTOs.Client
         [EmailAddress(ErrorMessage = "E-mail inválido")]
         [StringLength(100, ErrorMessage = "Tamanho máximo de {1} caracteres")]
         public string Email { get; set; }
+
+        public IEnumerable<Guid> Products { get; set; }
     }
 }

@@ -20,6 +20,7 @@ namespace Data.Context
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<UserEntity>(new UserMap().Configure);
             modelBuilder.Entity<ClientEntity>(new ClientMap().Configure);
+            modelBuilder.Entity<ClientProductEntity>(new ClientProductMap().Configure);
         }
     }
 }

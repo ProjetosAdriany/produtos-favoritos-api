@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.DTOs.Product;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -17,5 +18,7 @@ namespace Domain.DTOs.Client
         [EmailAddress(ErrorMessage = "E-mail inválido")]
         [StringLength(100, ErrorMessage = "Tamanho máximo de {1} caracteres")]
         public string Email { get; set; }
+
+        public List<ProductCreateDTO> Products { get; set; }
     }
 }

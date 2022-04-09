@@ -9,6 +9,7 @@ namespace Domain.Entities
     public class ClientEntity : BaseEntity
     {
         public string Name { get; set; }
-        public string Email { get; set; }        
+        public string Email { get; set; }
+        public List<ProductEntity> Product { get; set; }
     }
 }

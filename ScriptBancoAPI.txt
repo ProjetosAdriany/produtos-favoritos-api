@@ -30,4 +30,7 @@ CREATE TABLE `clientproduct` (
   CONSTRAINT `clientproduct_FK` FOREIGN KEY (`idClient`) REFERENCES `client` (`Id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+INSERT INTO user (Id,CreateAt,UpdateAt,Name,Email) VALUES
+	 ('8f3df199-114d-4a1c-a2b4-a486e1204f97','2022-04-09 20:17:09.366125','2022-04-09 20:30:36.474168','Admin','admin@admin.com.br');
+
 
